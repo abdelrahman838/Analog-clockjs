@@ -1,0 +1,184 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 30px;
+    background: #081b29;
+}
+
+.container{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: colorful 30s linear infinite;
+}
+
+@keyframes colorful{
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+.bar-seconds ,
+.number_hours {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.bar-seconds span{
+    position: absolute;
+    transform: rotate(calc(var(--index) * 6deg));
+    inset: -20px;
+    text-align: center;
+}
+
+.bar-seconds span p{
+    display: inline-block;
+    width: 2px;
+    height: 12px;
+    background: #0ef;
+    border-radius: 2px;
+    box-shadow: 0 0 10px #0ef;
+}
+
+.bar-seconds span:nth-child(5n) p{
+    width: 6px;
+    height: 18px;
+    transform: translateY(1px);
+}
+
+.number_hours span{
+    position: absolute;
+    transform: rotate(calc(var(--index) * 30deg));
+    inset: 6px;
+    text-align: center;
+}
+
+.number_hours span p{
+    font-size: 52px;
+    color: #0ef;
+    text-shadow: 0 0 10px #0ef;
+    transform: rotate(calc(var(--index) * -30deg));
+}
+
+.Analog-box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Analog-box .hand{
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.Analog-box .hand i{
+    display: inline-block;
+    transform-origin: bottom;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #0ef;
+}
+
+.Analog-box .Hour{
+    width: 320px;
+    height: 320px;
+}
+
+.Analog-box .minute{
+    width: 450px;
+    height: 450px;
+}
+
+
+.Analog-box .second{
+    width: 480px;
+    height: 480px;
+}
+
+.Analog-box .Hour i{
+    width: 8px;
+    height: 160px;
+    background-color: #0ef;
+}
+
+.Analog-box .minute i{
+    width: 8px;
+    height: 225px;
+    background-color: #0ef;
+}
+
+.Analog-box .second i{
+    width: 4px;
+    height: 310px;
+    background-color: white;
+    box-shadow: none;
+}
+
+.Analog-box .minute::before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: #0ef;
+    box-shadow: 0 0 5px #0ef;
+}
+
+.Analog-box .second::before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0 , 0, 0 , 0.5);
+}
+
+.digital{
+    width: 1000px;
+    height: 200px;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    animation: colorful 30s linear infinite;
+}
+
+h1{
+    margin-top: 2rem;
+    font-size: 50px;
+    color: #0ef;
+    animation: colorful 30s linear infinite;
+}
+
+.digital span{
+    color: #0ef;
+    font-size: 100px;
+}
+
+.digital hr{
+    margin-inline: 3rem;
+    height: 8rem;
+    color: #0ef;
+    box-shadow: 0 0 10px #0ef;
+}
